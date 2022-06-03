@@ -1,9 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
+
 *{
     box-sizing: border-box;
 }
-
+#pokemon-types{
+    height: 100px;
+}
 #search-bar-pokemon:focus{
     border-color: white;
     outline: 1px solid rgba(255, 255, 255, 0.253);
@@ -15,11 +18,50 @@
     font-weight: bolder;
 
  }
- .current-pokemon{
-    border-left: solid white 3px;
-    border-right: solid white 3px;
- }
  
+.current-pokemon{
+    border-left: solid 5px white;
+    border-right: solid 5px white;
+ }
+
+.btn:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#pokemon-list > .btn-dark:active{
+    background-color:#212529 !important;
+    border:none;
+}
+#pokemon-list > button{
+    max-height: 45px;
+}
+#page-buttons{
+    max-width: 100%;
+    max-height: 75px;
+    align-self: flex-end;
+}
+
+#pokemon-list >  .btn-dark:hover{
+    background-color:#212529 !important;
+    border-left: solid 5px white;
+    border-right: solid 5px white;
+    border-top: none;
+    border-bottom: none;
+}
+
+#pokemon-list > .btn-dark:focus{
+    background-color:#212529 !important;
+    border-left: solid 5px white;
+    border-right: solid 5px white;
+    border-top: none;
+    border-bottom: none;
+}
+
+#pokemon-sprite{
+max-height: 350px;
+}
+
 .column{
     background-color: #495057;
 }
@@ -36,6 +78,14 @@
    
 }
 
+.invalid-search{
+   border: 2px solid red !important;
+   font-style: italic;
+}
+
+#pokemon-types button{
+    cursor: default;
+}
 @media (max-width: 600px){
     #main-container{
         display: flex;
