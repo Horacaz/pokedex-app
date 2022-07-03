@@ -10,7 +10,7 @@ export default async function validateSearch(callBackFunction, pokemonSearch) {
       $searchBar.classList.add('invalid-search');
       $searchBar.value = "The searched Pokemon doesn't exist.";
     }
-  } else if (regulateInput.test(pokemonSearch)) {
+  } else {
     const pokemonName = pokemonSearch.toLowerCase();
     try {
       await callBackFunction(pokemonName);
