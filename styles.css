@@ -4,6 +4,7 @@
 #pokemon-types{
     height: 100px;
 }
+
 #search-bar-pokemon:focus{
     border-color: white;
     outline: 1px solid rgba(255, 255, 255, 0.253);
@@ -39,7 +40,7 @@
     align-self: flex-end;
 }
 
-#pokemon-list >  .btn-dark:hover{
+#pokemon-list > .btn-dark:hover{
     background-color:#212529 !important;
     border-left: solid 5px white;
     border-right: solid 5px white;
@@ -76,7 +77,7 @@ max-height: 350px;
 }
 
 .invalid-search{
-   border: 2px solid red !important;
+   outline: 2px solid red !important;
    font-style: italic;
 }
 
