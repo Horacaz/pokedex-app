@@ -1,3 +1,4 @@
 module.exports = {
-  testPathIgnorePatterns: ['<rootDir>/cypress/'],
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.{js,jsx}'],
 };
