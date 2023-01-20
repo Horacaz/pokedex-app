@@ -13,15 +13,18 @@
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.5.3",
+    "husky": "^8.0.3",
     "jest": "^28.1.0",
-    "jest-environment-jsdom": "^28.1.1"
+    "jest-environment-jsdom": "^28.1.1",
+    "prettier": "2.8.3"
   },
   "name": "pokedex-app-clase-13",
   "version": "1.0.0",
   "description": "Pokedex App",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
