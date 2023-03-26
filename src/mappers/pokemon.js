@@ -1,11 +1,19 @@
-import Pokemon from '../entities/pokemon.js';
+import Pokemon from "../entities/pokemon.js";
 
 export default function mapPokemon(apiData) {
   const {
     name,
     id,
-    sprites: { other: { 'official-artwork': { front_default: picture } } },
-    abilities: { 0: { ability: { name: ability } } },
+    sprites: {
+      other: {
+        "official-artwork": { front_default: picture },
+      },
+    },
+    abilities: {
+      0: {
+        ability: { name: ability },
+      },
+    },
     height,
     weight,
     types,

@@ -1,15 +1,11 @@
-import {
-  getPokemonFromApi,
-  getPokemonListFromApi,
-} from '../api/pokedex.js';
+import { getPokemonFromApi, getPokemonListFromApi } from "../api/pokedex.js";
 
 import {
   retrievePokemonFromLocalStorage,
   retrievePokemonListFromLocalStorage,
   savePokemonInLocalStorage,
   savePokemonListInLocalStorage,
-}
-  from '../storage/pokemon-storage.js';
+} from "../storage/pokemon-storage.js";
 
 export async function fetchPokemon(pokemonName) {
   try {

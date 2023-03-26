@@ -1,71 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-.type{
-    color: white;
-    text-shadow: 1px 2px 2px black;
-}
-
-.type.grass{
-    background-color: darkgreen;
-}
-.type.poison{
-    background-color: darkviolet;
+.type {
+  color: white;
+  text-shadow: 1px 2px 2px black;
 }
 
-.type.steel{
-    background-color:rgb(121, 124, 124);
+.type.grass {
+  background-color: darkgreen;
 }
-.type.water{
-    background-color: rgb(30, 117, 218);
-}
-.type.fairy{
-    background-color: rgb(223, 113, 168);
-}
-.type.flying{
-   background-color:rgb(107, 150, 207);
-}
-.type.electric{
-    background-color: gold;
+.type.poison {
+  background-color: darkviolet;
 }
 
-.type.dark{
-    background-color: rgb(24,24,24,1);
+.type.steel {
+  background-color: rgb(121, 124, 124);
 }
-.type.fighting{
-    background-color: rgb(145, 70, 70);
+.type.water {
+  background-color: rgb(30, 117, 218);
 }
-.type.normal{
-    background-color:darkgray;
+.type.fairy {
+  background-color: rgb(223, 113, 168);
 }
-.type.psychic{
-    background-color: rgb(180, 33, 126);
+.type.flying {
+  background-color: rgb(107, 150, 207);
 }
-
-.type.ghost{
-    background-color: rgb(46, 37, 100);
-}
-
-.type.fire{
-    background-color: rgb(255, 60, 0);
+.type.electric {
+  background-color: gold;
 }
 
-.type.bug{
-    background-color: rgb(158, 194, 125);
+.type.dark {
+  background-color: rgb(24, 24, 24, 1);
+}
+.type.fighting {
+  background-color: rgb(145, 70, 70);
+}
+.type.normal {
+  background-color: darkgray;
+}
+.type.psychic {
+  background-color: rgb(180, 33, 126);
 }
 
-.type.ground{
-    background-color: rgb(153, 101, 77);
+.type.ghost {
+  background-color: rgb(46, 37, 100);
 }
 
-.type.ice{
-    background-color: rgb(57, 250, 250);
+.type.fire {
+  background-color: rgb(255, 60, 0);
 }
 
-.type.rock{
-    background-color: rgb(73, 71, 64);
+.type.bug {
+  background-color: rgb(158, 194, 125);
 }
 
-.type.dragon{
-background-color:rgb(21, 29, 146);
+.type.ground {
+  background-color: rgb(153, 101, 77);
+}
+
+.type.ice {
+  background-color: rgb(57, 250, 250);
+}
+
+.type.rock {
+  background-color: rgb(73, 71, 64);
+}
+
+.type.dragon {
+  background-color: rgb(21, 29, 146);
 }

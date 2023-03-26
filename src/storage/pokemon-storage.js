@@ -9,7 +9,7 @@ export function retrievePokemonFromLocalStorage(pokemonName) {
 export function retrievePokemonListFromLocalStorage(listOffset) {
   const pokemonList = localStorage.getItem(listOffset);
   if (pokemonList === null) {
-    throw new Error('No list available');
+    throw new Error("No list available");
   }
   return JSON.parse(pokemonList);
 }
