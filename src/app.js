@@ -5,9 +5,9 @@ import {
   setCurrentPokemon,
 } from "./ui/pagination/pagination.js";
 import createPokemonPage from "./ui/pokemon-page.js";
-import handlePages from "./ui/pagination/page-buttons.js";
+import {handlePages, handlePokemonCycle} from "./ui/pagination/page-buttons.js";
 import handleSearch from "./utilities/search-pokemon.js";
-import handlePokemonCycle from "./ui/pagination/previous-next-pokemon.js";
+
 
 async function updatePokemonPage(pokemon) {
   const pokemonData = await fetchPokemon(pokemon);
