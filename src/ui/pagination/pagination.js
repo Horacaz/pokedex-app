@@ -23,20 +23,14 @@ export async function printPokemonList(pokemonList) {
   const $pokemonList = document.querySelector("#pokemon-list");
   $pokemonList.replaceChildren();
 
-  for (let i = 0; i < pokemonLimit; i += 1) {
-    if (!pokemonList.results[i]) {
-      return;
-    }
-    const $pokemonButton = document.createElement("button");
-
-    $pokemonButton.setAttribute("type", "button");
-    $pokemonButton.classList.add("btn", "btn-dark", "fw-bolder");
-
-    const pokemonName = pokemonList.results[i].name;
-    $pokemonButton.setAttribute("data-pokemon", `${pokemonName}-entry-${i}`);
-    $pokemonButton.textContent = capitalizeString(pokemonName);
-    $pokemonList.appendChild($pokemonButton);
-  }
+    pokemonList.results.map( (pokemon, i) => {
+      const $pokemonButton = document.createElement("button");
+      $pokemonButton.setAttribute("type", "button");
+      $pokemonButton.classList.add("btn", "btn-dark", "fw-bolder");
+      $pokemonButton.setAttribute("data-pokemon", `${pokemon.name}-entry-${i}`);
+      $pokemonButton.textContent = capitalizeString(pokemon.name);
+      $pokemonList.appendChild($pokemonButton);
+  })
 }
 
 export async function getPokemonName(callBackFunction = () => {}) {
@@ -44,19 +38,13 @@ export async function getPokemonName(callBackFunction = () => {}) {
 
   $pokemonList.onclick = (pokemon) => {
     const $newCurrentPokemon = pokemon.target;
-    if ($newCurrentPokemon.id === "pokemon-list") {
-      return;
-    }
-
-    const $currentPokemon = document.querySelector(".current-pokemon");
-    if ($currentPokemon) {
+    if ($newCurrentPokemon.id !== "pokemon-list") {
+      const $currentPokemon = document.querySelector(".current-pokemon");
       $currentPokemon.classList.remove("current-pokemon");
       $newCurrentPokemon.classList.add("current-pokemon");
-    } else {
-      $newCurrentPokemon.classList.add("current-pokemon");
-    }
 
     const [pokemonName] = $newCurrentPokemon.dataset.pokemon.split("-entry");
     callBackFunction(pokemonName);
+    }
   };
 }
