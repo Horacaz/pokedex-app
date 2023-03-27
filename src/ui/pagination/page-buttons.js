@@ -64,13 +64,6 @@ function generatePreviousPageButtons(currentPage) {
   const $currentPage = currentPage;
   const page = Number($currentPage.dataset.page);
   const id = Number($currentPage.id.split("button-")[1]);
-
-  if (
-    $pageButtons[0].dataset.page === "1" &&
-    $pageButtons[0].classList.contains("current-page")
-  ) {
-    return false;
-  }
   if ($pageButtons[0].classList.contains("current-page")) {
     $pageButtons[0].classList.remove("current-page");
 
@@ -86,7 +79,6 @@ function generatePreviousPageButtons(currentPage) {
     const $newCurrentPage = document.querySelector(`#page-button-${id - 1}`);
     $newCurrentPage.classList.add("current-page");
   }
-  return false;
 }
 
 export function updatePreviousPage(callBackFunction = () => {}) {
@@ -95,17 +87,13 @@ export function updatePreviousPage(callBackFunction = () => {}) {
   const currentOffset = Number($paginator.dataset.currentOffset);
   const currentPage = document.querySelector(".current-page");
   const lastPokemon = pokemonPerPage - 1;
-
-  if (currentOffset === 0) {
-    return false;
-  }
   const previousOffset = (currentOffset - pokemonPerPage).toString();
 
   callBackFunction(previousOffset, lastPokemon);
   generatePreviousPageButtons(currentPage);
   buttonHandle();
   $paginator.dataset.currentOffset = previousOffset;
-  return false;
+  return;
 }
 
 function firstPage(callBackFunction = () => {}) {
@@ -138,13 +126,21 @@ function lastPage(callBackFunction = () => {}) {
 
 function previousPage(callBackFunction = () => {}) {
   const $buttonPrevious = document.querySelector("#button-previous");
+  const $paginator = document.querySelector("#paginator");
+  const $pageButtons = document.querySelectorAll(".page-button");
 
   $buttonPrevious.onclick = () => {
-    updatePreviousPage(callBackFunction);
+    if (
+      $paginator.dataset.currentOffset !== "0" ||
+      ($pageButtons[0].dataset.page !== "1" &&
+        !$pageButtons[0].classList.contains("current-page"))
+    ) {
+      updatePreviousPage(callBackFunction);
+    }
   };
 }
 
-function updatePageOnClick(callBackFunction) {
+function updatePageOnClick(callBackFunction = () => {}) {
   const pokemonPerPage = 15;
   const $pageButtons = document.querySelectorAll(".page-button");
   const $paginator = document.querySelector("#paginator");
@@ -189,26 +185,12 @@ function generateNextPageButtons(currentPage) {
 export function updateNextPage(callBackFunction = () => {}) {
   const pokemonPerPage = 15;
   const $paginator = document.querySelector("#paginator");
-  const maxPages = Number($paginator.dataset.maxPages);
   const currentPage = document.querySelector(".current-page");
   const currentOffset = Number($paginator.dataset.currentOffset);
   const nextOffset = (currentOffset + pokemonPerPage).toString();
   $paginator.dataset.currentOffset = nextOffset;
 
   const firstPokemon = 0;
-
-  if (currentPage === maxPages - 1) {
-    callBackFunction(nextOffset, firstPokemon);
-    generateNextPageButtons(currentPage);
-    buttonHandle();
-    return;
-  }
-  if (currentPage > maxPages - 1) {
-    callBackFunction(nextOffset, firstPokemon);
-    generateNextPageButtons(currentPage);
-    buttonHandle();
-    return;
-  }
   callBackFunction(nextOffset, firstPokemon);
   generateNextPageButtons(currentPage);
   buttonHandle();
