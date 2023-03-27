@@ -3,7 +3,7 @@
  */
 /// <reference types= '@types/jest' />
 import page from "../fixtures/pagination-fixture.js";
-import handlePages from "../page-buttons.js";
+import {handlePages} from "../page-buttons.js";
 
 beforeEach(() => {
   document.body.innerHTML = page;
@@ -122,3 +122,69 @@ test("Previous button should redirect to the previous page if current page is no
   $buttonPrevious.click();
   expect($pageButtons[0].classList).toContain("current-page");
 });
+
+test.skip("Previous pokemon button should not call updatePokemon if current pokemon is first in the paginator", () => {
+  const updatePokemonMock = jest.fn();
+  const updatePokemonListMock = jest.fn();
+  handlePokemonCycle(updatePokemonMock, updatePokemonListMock);
+  const $buttonPreviousPokemon = document.querySelector("#previous-pokemon");
+  const $currentPokemonList = document.querySelectorAll("#pokemon-list button");
+  const $currentPage = document.querySelector(".current-page");
+  $buttonPreviousPokemon.click();
+  expect($currentPage.textContent).toEqual("1");
+  expect($currentPokemonList[0].classList).toContain("current-pokemon");
+  expect(updatePokemonMock).toHaveBeenCalledTimes(0);
+});
+
+test.skip("Previous pokemon button should call updatePokemon", () => {
+    const updatePokemonMock = jest.fn();
+    const updatePokemonListMock = jest.fn();
+    handlePokemonCycle(updatePokemonMock, updatePokemonListMock);
+    const $buttonPreviousPokemon = document.querySelector("#previous-pokemon");
+    const $currentPokemonList = document.querySelectorAll("#pokemon-list button");
+    $currentPokemonList[0].classList.remove('current-pokemon');
+    $currentPokemonList[5].classList.add('current-pokemon');
+    $buttonPreviousPokemon.click();
+    expect(updatePokemonMock).toHaveBeenCalledTimes(1);
+    expect($currentPokemonList[4].classList).toContain('current-pokemon');
+  });
+  
+  test.skip("Previous pokemon button should go back one page if current pokemon is in the first position and there are more pages", () =>{
+    const updatePokemonMock = jest.fn();
+    const updatePokemonListMock = jest.fn();
+    handlePokemonCycle(updatePokemonMock, updatePokemonListMock);
+    const $buttonNext = document.querySelector("#button-next");
+    $buttonNext.click();
+    const $currentPage = document.querySelector(".current-page");
+    const $currentPokemonList = document.querySelectorAll("#pokemon-list button");
+    expect($currentPage.textContent).toBe('3');
+    expect($currentPokemonList[0]).toBe('')
+    
+
+  })
+
+  test.skip("Next pokemon button should call updatePokemon", () => {
+    const updatePokemonMock = jest.fn();
+    const updatePokemonListMock = jest.fn();
+    handlePokemonCycle(updatePokemonMock, updatePokemonListMock);
+    const $buttonNextPokemon = document.querySelector("#next-pokemon");
+    const $currentPokemonList = document.querySelectorAll("#pokemon-list button");
+    const $currentPage = document.querySelector(".current-page");
+    $buttonNextPokemon.click();
+    expect($currentPage.textContent).toEqual("1");
+    expect($currentPokemonList[1].classList).toContain("current-pokemon");
+    expect(updatePokemonMock).toHaveBeenCalledTimes(1);
+  });
+  
+  test.skip("Next pokemon button should not call updatePokemon if current pokemon is the last in the paginator", () => {
+      const updatePokemonMock = jest.fn();
+      const updatePokemonListMock = jest.fn();
+      handlePokemonCycle(updatePokemonMock, updatePokemonListMock);
+      const $buttonNextPokemon = document.querySelector("#next-pokemon");
+      const $currentPokemonList = document.querySelectorAll("#pokemon-list button");
+      $currentPokemonList[0].classList.remove('current-pokemon');
+      $currentPokemonList[5].classList.add('current-pokemon');
+      $buttonNextPokemon.click();
+      expect(updatePokemonMock).toHaveBeenCalledTimes(1);
+      expect($currentPokemonList[4].classList).toContain('current-pokemon');
+    });
