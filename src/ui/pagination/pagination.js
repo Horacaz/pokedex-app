@@ -23,14 +23,14 @@ export async function printPokemonList(pokemonList) {
   const $pokemonList = document.querySelector("#pokemon-list");
   $pokemonList.replaceChildren();
 
-    pokemonList.results.map( (pokemon, i) => {
-      const $pokemonButton = document.createElement("button");
-      $pokemonButton.setAttribute("type", "button");
-      $pokemonButton.classList.add("btn", "btn-dark", "fw-bolder");
-      $pokemonButton.setAttribute("data-pokemon", `${pokemon.name}-entry-${i}`);
-      $pokemonButton.textContent = capitalizeString(pokemon.name);
-      $pokemonList.appendChild($pokemonButton);
-  })
+  pokemonList.results.map((pokemon, i) => {
+    const $pokemonButton = document.createElement("button");
+    $pokemonButton.setAttribute("type", "button");
+    $pokemonButton.classList.add("btn", "btn-dark", "fw-bolder");
+    $pokemonButton.setAttribute("data-pokemon", `${pokemon.name}-entry-${i}`);
+    $pokemonButton.textContent = capitalizeString(pokemon.name);
+    $pokemonList.appendChild($pokemonButton);
+  });
 }
 
 export async function getPokemonName(callBackFunction = () => {}) {
@@ -43,8 +43,8 @@ export async function getPokemonName(callBackFunction = () => {}) {
       $currentPokemon.classList.remove("current-pokemon");
       $newCurrentPokemon.classList.add("current-pokemon");
 
-    const [pokemonName] = $newCurrentPokemon.dataset.pokemon.split("-entry");
-    callBackFunction(pokemonName);
+      const [pokemonName] = $newCurrentPokemon.dataset.pokemon.split("-entry");
+      callBackFunction(pokemonName);
     }
   };
 }
