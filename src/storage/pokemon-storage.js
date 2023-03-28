@@ -27,6 +27,6 @@ export function savePokemonListInLocalStorage(pokemonList, listOffset = 15) {
   try {
     localStorage.setItem(`pokemon-list-${listOffset}`, pokemonDataList);
   } catch (e) {
-  return console.log(e);
+    return console.log(e);
   }
 }
