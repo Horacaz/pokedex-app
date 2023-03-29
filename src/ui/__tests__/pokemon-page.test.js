@@ -12,7 +12,6 @@ beforeEach(() => {
 });
 test("printPokemonInformation should match data", () => {
   createPokemonPage(pokemonData);
-  console.log(pokemonData)
   const $pokemonAbility = document.querySelector("#pokemon-ability");
   const $pokemonHeight = document.querySelector("#pokemon-height");
   const $pokemonWeight = document.querySelector("#pokemon-weight");

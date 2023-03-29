@@ -1,9 +1,9 @@
-import capitalizeString from "../utilities/capitalize-string.js";
 
 function renderPokemonHeader(pokemonData) {
+  console.log(pokemonData);
   const $pokemonName = document.querySelector("#pokemon-name");
 
-  const pokemonName = capitalizeString(pokemonData.name);
+  const pokemonName = pokemonData.displayName;
   $pokemonName.textContent = pokemonName;
 
   const $pokemonTitle = document.querySelector("#pokemon-title");
@@ -28,7 +28,7 @@ function renderPokemonSprite(pokemonData) {
 
 function printPokemonInformation(pokemonData) {
   const $pokemonAbility = document.querySelector("#pokemon-ability");
-  $pokemonAbility.textContent = capitalizeString(pokemonData.ability);
+  $pokemonAbility.textContent = pokemonData.ability;
 
   const $pokemonHeight = document.querySelector("#pokemon-height");
   $pokemonHeight.textContent = `${pokemonData.height / 10} m`;
@@ -47,11 +47,11 @@ function renderPokemonTypes(pokemonData) {
 
   pokemonTypes.map((type) => {
     const $pokemonType = document.createElement("button");
-    $pokemonType.textContent = capitalizeString(type.type.name);
+    $pokemonType.textContent = type;
     $pokemonType.setAttribute("type", "button");
     $pokemonType.classList.add(
       "type",
-      `${type.type.name}`,
+      `${type}`,
       "btn",
       "btn-dark",
       "fs-5",

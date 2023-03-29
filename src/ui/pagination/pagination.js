@@ -1,4 +1,4 @@
-import capitalizeString from "../../utilities/capitalize-string.js";
+import formatPokemonName from "../../utilities/formatPokemonName.js";
 
 export function setCurrentPokemon(
   callBackFunction = () => {},
@@ -28,7 +28,7 @@ export async function printPokemonList(pokemonList) {
     $pokemonButton.setAttribute("type", "button");
     $pokemonButton.classList.add("btn", "btn-dark", "fw-bolder");
     $pokemonButton.setAttribute("data-pokemon", `${pokemon.name}-entry-${i}`);
-    $pokemonButton.textContent = capitalizeString(pokemon.name);
+    $pokemonButton.textContent = formatPokemonName(pokemon.name);
     $pokemonList.appendChild($pokemonButton);
   });
 }

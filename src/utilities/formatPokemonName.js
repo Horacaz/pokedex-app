@@ -1,3 +1,3 @@
-export default function capitalizeString(string) {
+export default function formatPokemonName(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }

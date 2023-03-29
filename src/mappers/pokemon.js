@@ -1,5 +1,5 @@
-import Pokemon from "../entities/pokemon.js";
-
+import Pokemon from "../entities/Pokemon.js"; 
+import formatPokemonName from '../utilities/formatPokemonName.js'
 export default function mapPokemon(apiData) {
   const {
     name,
@@ -9,16 +9,15 @@ export default function mapPokemon(apiData) {
         "official-artwork": { front_default: picture },
       },
     },
-    abilities: {
-      0: {
-        ability: { name: ability },
-      },
-    },
     height,
     weight,
-    types,
     stats,
   } = apiData;
 
-  return new Pokemon(name, id, picture, ability, height, weight, types, stats);
+  const displayName =  formatPokemonName(apiData.name);
+  const ability = formatPokemonName(apiData.abilities[0].ability.name);
+  const types = apiData.types.map( (type) => (
+   formatPokemonName(type.type.name)
+  ))
+  return new Pokemon(name, displayName, id, picture, ability, height, weight, types, stats);
 }

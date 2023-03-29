@@ -10,10 +10,9 @@ import {
   handlePokemonCycle,
 } from "./ui/pagination/page-buttons.js";
 import handleSearch from "./utilities/search-pokemon.js";
-import mapPokemon from "./mappers/pokemon.js";
 
 async function updatePokemonPage(pokemon) {
-  const pokemonData = mapPokemon(await fetchPokemon(pokemon));
+  const pokemonData = await fetchPokemon(pokemon);
   createPokemonPage(pokemonData);
 }
 

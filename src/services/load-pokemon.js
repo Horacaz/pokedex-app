@@ -1,5 +1,6 @@
 import { getPokemonFromApi, getPokemonListFromApi } from "../api/pokedex.js";
-
+import mapPokemon from '../mappers/pokemon.js'
+import mapPokemonList from "../mappers/pokemonList.js";
 import {
   retrievePokemonFromLocalStorage,
   retrievePokemonListFromLocalStorage,
@@ -11,7 +12,7 @@ export async function fetchPokemon(pokemonName) {
   try {
     return retrievePokemonFromLocalStorage(pokemonName);
   } catch (e) {
-    const pokemon = await getPokemonFromApi(pokemonName);
+    const pokemon = mapPokemon(await getPokemonFromApi(pokemonName));
     savePokemonInLocalStorage(pokemonName, pokemon);
     return pokemon;
   }
@@ -22,6 +23,7 @@ export async function fetchPokemonList(offSet = 0) {
     return retrievePokemonListFromLocalStorage(offSet);
   } catch (e) {
     const pokemonList = await getPokemonListFromApi(offSet);
+    const list = mapPokemonList(pokemonList);
     savePokemonListInLocalStorage(pokemonList, offSet);
     return pokemonList;
   }
