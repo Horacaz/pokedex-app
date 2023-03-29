@@ -1,5 +1,3 @@
-import formatPokemonName from "../../utilities/formatPokemonName.js";
-
 export function setCurrentPokemon(
   callBackFunction = () => {},
   newCurrentPokemon = 0
@@ -23,12 +21,12 @@ export async function printPokemonList(pokemonList) {
   const $pokemonList = document.querySelector("#pokemon-list");
   $pokemonList.replaceChildren();
 
-  pokemonList.results.map((pokemon, i) => {
+  pokemonList.pokemon.map((pokemon, i) => {
     const $pokemonButton = document.createElement("button");
     $pokemonButton.setAttribute("type", "button");
     $pokemonButton.classList.add("btn", "btn-dark", "fw-bolder");
     $pokemonButton.setAttribute("data-pokemon", `${pokemon.name}-entry-${i}`);
-    $pokemonButton.textContent = formatPokemonName(pokemon.name);
+    $pokemonButton.textContent = pokemon.displayName;
     $pokemonList.appendChild($pokemonButton);
   });
 }

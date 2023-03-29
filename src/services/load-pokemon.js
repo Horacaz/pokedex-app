@@ -22,8 +22,7 @@ export async function fetchPokemonList(offSet = 0) {
   try {
     return retrievePokemonListFromLocalStorage(offSet);
   } catch (e) {
-    const pokemonList = await getPokemonListFromApi(offSet);
-    const list = mapPokemonList(pokemonList);
+    const pokemonList = mapPokemonList(await getPokemonListFromApi(offSet));
     savePokemonListInLocalStorage(pokemonList, offSet);
     return pokemonList;
   }

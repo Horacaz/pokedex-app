@@ -1,6 +1,5 @@
 
 function renderPokemonHeader(pokemonData) {
-  console.log(pokemonData);
   const $pokemonName = document.querySelector("#pokemon-name");
 
   const pokemonName = pokemonData.displayName;
