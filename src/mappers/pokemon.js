@@ -11,7 +11,6 @@ export default function mapPokemon(apiData) {
     },
     height,
     weight,
-    stats,
   } = apiData;
 
   const displayName =  toUpperCaseString(apiData.name);
@@ -19,5 +18,8 @@ export default function mapPokemon(apiData) {
   const types = apiData.types.map( (type) => (
     toUpperCaseString(type.type.name)
   ))
+  const stats = apiData.stats.map(stat => (
+    {baseStat : stat.base_stat}
+  ));
   return new Pokemon(name, displayName, id, picture, ability, height, weight, types, stats);
 }

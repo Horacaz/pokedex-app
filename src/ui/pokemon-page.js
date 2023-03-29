@@ -64,7 +64,7 @@ function printPokemonStats(pokemonData) {
   const $pokemonStats = document.querySelectorAll(".statistic");
   const pokemonStats = pokemonData.stats;
   pokemonStats.map((stat, i) => {
-    $pokemonStats[i].textContent = stat.base_stat;
+    $pokemonStats[i].textContent = stat.baseStat;
   });
 }
 
