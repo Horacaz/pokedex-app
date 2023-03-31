@@ -8,6 +8,6 @@ export default function mapPokemonList(apiData) {
     url: pokemon.url,
     name: pokemon.name,
   }));
-  const pokemonList = {count, pokemon}
+  const pokemonList = { count, pokemon };
   return new PokemonList(pokemonList);
 }
