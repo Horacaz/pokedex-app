@@ -1,5 +1,15 @@
 export default class Pokemon {
-  constructor(name, displayName, id, picture, ability, height, weight, types, stats) {
+  constructor(
+    name,
+    displayName,
+    id,
+    picture,
+    ability,
+    height,
+    weight,
+    types,
+    stats
+  ) {
     this.name = name;
     this.id = id;
     this.picture = picture;
