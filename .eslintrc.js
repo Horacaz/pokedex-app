@@ -2,17 +2,19 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    'jest/globals': true,
+    "jest/globals": true,
   },
   extends: [
-    'airbnb-base', 'plugin:cypress/recommended',
+    "airbnb-base",
+    "plugin:cypress/recommended",
+    "plugin:prettier/recommended",
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
   rules: {
-    'import/extensions': ['off', 'ignorePackages'],
+    "import/extensions": ["off", "ignorePackages"],
   },
-  plugins: ['jest'],
+  plugins: ["jest"],
 };

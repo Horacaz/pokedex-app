@@ -1,5 +1,5 @@
 export default async function validateSearch(callBackFunction, pokemonSearch) {
-  const $searchBar = document.querySelector('#search-bar-pokemon');
+  const $searchBar = document.querySelector("#search-bar-pokemon");
   const regulateInput = /[A-z]$/;
 
   if (!regulateInput.test(pokemonSearch)) {
@@ -7,7 +7,7 @@ export default async function validateSearch(callBackFunction, pokemonSearch) {
     try {
       await callBackFunction(pokemonName);
     } catch (e) {
-      $searchBar.classList.add('invalid-search');
+      $searchBar.classList.add("invalid-search");
       $searchBar.value = "The searched Pokemon doesn't exist.";
     }
   } else {
@@ -15,7 +15,7 @@ export default async function validateSearch(callBackFunction, pokemonSearch) {
     try {
       await callBackFunction(pokemonName);
     } catch (e) {
-      $searchBar.classList.add('invalid-search');
+      $searchBar.classList.add("invalid-search");
       $searchBar.value = "The searched Pokemon doesn't exist.";
     }
   }

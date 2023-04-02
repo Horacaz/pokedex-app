@@ -1,9 +1,15 @@
-import { fetchPokemon, fetchPokemonList } from './services/load-pokemon.js';
-import { getPokemonName, printPokemonList, setCurrentPokemon } from './ui/pagination/pagination.js';
-import createPokemonPage from './ui/pokemon-page.js';
-import handlePages from './ui/pagination/page-buttons.js';
-import handleSearch from './utilities/search-pokemon.js';
-import handlePokemonCycle from './ui/pagination/previous-next-pokemon.js';
+import { fetchPokemon, fetchPokemonList } from "./services/load-pokemon.js";
+import {
+  getPokemonName,
+  printPokemonList,
+  setCurrentPokemon,
+} from "./ui/pagination/pagination.js";
+import createPokemonPage from "./ui/pokemon-page.js";
+import {
+  handlePages,
+  handlePokemonCycle,
+} from "./ui/pagination/page-buttons.js";
+import handleSearch from "./utilities/search-pokemon.js";
 
 async function updatePokemonPage(pokemon) {
   const pokemonData = await fetchPokemon(pokemon);
@@ -30,7 +36,7 @@ function handleApp() {
 
 export default async function initApp() {
   printPokemonList(await fetchPokemonList());
-  updatePokemonPage('bulbasaur');
+  updatePokemonPage("bulbasaur");
   setCurrentPokemon();
   handleApp();
 }

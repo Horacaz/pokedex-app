@@ -1,17 +1,17 @@
 export function retrievePokemonFromLocalStorage(pokemonName) {
-  const pokemon = localStorage.getItem(`${pokemonName}`);
+  const pokemon = JSON.parse(localStorage.getItem(`${pokemonName}`));
   if (pokemon === null) {
     throw new Error(`${pokemonName} is not available on LocalStorage.`);
   }
-  return JSON.parse(pokemon);
+  return pokemon;
 }
 
 export function retrievePokemonListFromLocalStorage(listOffset) {
-  const pokemonList = localStorage.getItem(listOffset);
+  const pokemonList = JSON.parse(localStorage.getItem(listOffset));
   if (pokemonList === null) {
-    throw new Error('No list available');
+    throw new Error("No list available");
   }
-  return JSON.parse(pokemonList);
+  return pokemonList;
 }
 
 export function savePokemonInLocalStorage(pokemonName, pokemonData) {
@@ -19,7 +19,7 @@ export function savePokemonInLocalStorage(pokemonName, pokemonData) {
   try {
     localStorage.setItem(pokemonName, pokemon);
   } catch (e) {
-    console.log(e);
+    return console.log(e);
   }
 }
 export function savePokemonListInLocalStorage(pokemonList, listOffset = 15) {
@@ -27,6 +27,6 @@ export function savePokemonListInLocalStorage(pokemonList, listOffset = 15) {
   try {
     localStorage.setItem(`pokemon-list-${listOffset}`, pokemonDataList);
   } catch (e) {
-    console.log(e);
+    return console.log(e);
   }
 }

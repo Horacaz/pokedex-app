@@ -1,100 +1,93 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
-
-#pokemon-types{
-    height: 100px;
+#pokemon-types {
+  height: 100px;
 }
 
-#search-bar-pokemon:focus{
-    border-color: white;
-    outline: 1px solid rgba(255, 255, 255, 0.253);
-    box-shadow: none;
+#search-bar-pokemon:focus {
+  border-color: white;
+  outline: 1px solid rgba(255, 255, 255, 0.253);
+  box-shadow: none;
 }
-.current-page{
-    border-top: solid white 3px;
-    border-bottom: solid white 3px;
-    font-weight: bolder;
-
- }
- 
-.current-pokemon{
-    border-left: solid 5px white;
-    border-right: solid 5px white;
- }
-
-.btn:focus{
-    outline: none !important;
-    box-shadow: none !important;
+.current-page {
+  border-top: solid white 3px;
+  border-bottom: solid white 3px;
+  font-weight: bolder;
 }
 
-#pokemon-list > .btn-dark:active{
-    background-color:#212529 !important;
-    border:none;
-}
-#pokemon-list > button{
-    max-height: 45px;
-}
-#page-buttons{
-    max-width: 100%;
-    max-height: 75px;
-    align-self: flex-end;
+.current-pokemon {
+  border-left: solid 5px white;
+  border-right: solid 5px white;
 }
 
-#pokemon-list > .btn-dark:hover{
-    background-color:#212529 !important;
-    border-left: solid 5px white;
-    border-right: solid 5px white;
-    border-top: none;
-    border-bottom: none;
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-#pokemon-list > .btn-dark:focus{
-    background-color:#212529 !important;
-    border-left: solid 5px white;
-    border-right: solid 5px white;
-    border-top: none;
-    border-bottom: none;
+#pokemon-list > .btn-dark:active {
+  background-color: #212529 !important;
+  border: none;
+}
+#pokemon-list > button {
+  max-height: 45px;
+}
+#page-buttons {
+  max-width: 100%;
+  max-height: 75px;
+  align-self: flex-end;
 }
 
-#pokemon-sprite{
-max-height: 350px;
+#pokemon-list > .btn-dark:hover {
+  background-color: #212529 !important;
+  border-left: solid 5px white;
+  border-right: solid 5px white;
+  border-top: none;
+  border-bottom: none;
 }
 
-.column{
-    background-color: #495057;
-}
-.pagination > li > a
-{
-    background-color: #495057;
-    font-weight: bolder;
-    color: white;
-}
-.pagination > li > a:hover
-{
-    color: #fff;
-    background-color: #5c636a;
-   
+#pokemon-list > .btn-dark:focus {
+  background-color: #212529 !important;
+  border-left: solid 5px white;
+  border-right: solid 5px white;
+  border-top: none;
+  border-bottom: none;
 }
 
-.invalid-search{
-   outline: 2px solid red !important;
-   font-style: italic;
+#pokemon-sprite {
+  max-height: 350px;
 }
 
-#pokemon-types button{
-    cursor: default;
+.column {
+  background-color: #495057;
 }
-@media (max-width: 600px){
-    #main-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-    }
-    #pokemon-page{
-        justify-content: center;
-    }
+.pagination > li > a {
+  background-color: #495057;
+  font-weight: bolder;
+  color: white;
+}
+.pagination > li > a:hover {
+  color: #fff;
+  background-color: #5c636a;
 }
 
+.invalid-search {
+  outline: 2px solid red !important;
+  font-style: italic;
+}
 
+#pokemon-types button {
+  cursor: default;
+}
+@media (max-width: 600px) {
+  #main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  #pokemon-page {
+    justify-content: center;
+  }
+}
