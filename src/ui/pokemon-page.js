@@ -1,4 +1,3 @@
-
 function renderPokemonHeader(pokemonData) {
   const $pokemonName = document.querySelector("#pokemon-name");
 

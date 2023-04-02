@@ -4,7 +4,7 @@ export default function mapPokemon(apiData) {
   const pokemonData = {};
   pokemonData.name = apiData.name;
   pokemonData.id = apiData.id;
-  pokemonData.picture = apiData.sprites.other['official-artwork'].front_default
+  pokemonData.picture = apiData.sprites.other["official-artwork"].front_default;
   pokemonData.height = apiData.height;
   pokemonData.weight = apiData.weight;
   pokemonData.displayName = toUpperCaseString(apiData.name);

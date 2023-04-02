@@ -20,7 +20,6 @@ export async function printPokemonList(pokemonList) {
 
   const $pokemonList = document.querySelector("#pokemon-list");
   $pokemonList.replaceChildren();
-
   pokemonList.pokemon.map((pokemon, i) => {
     const $pokemonButton = document.createElement("button");
     $pokemonButton.setAttribute("type", "button");

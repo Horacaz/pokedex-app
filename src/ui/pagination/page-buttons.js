@@ -81,7 +81,7 @@ function generatePreviousPageButtons(currentPage) {
   }
 }
 
-export function updatePreviousPage(callBackFunction = () => {}) {
+export function updatePreviousPage(callBackFunction) {
   const pokemonPerPage = 15;
   const $paginator = document.querySelector("#paginator");
   const currentOffset = Number($paginator.dataset.currentOffset);
@@ -96,7 +96,7 @@ export function updatePreviousPage(callBackFunction = () => {}) {
   return;
 }
 
-function firstPage(callBackFunction = () => {}) {
+function firstPage(callBackFunction) {
   const $paginator = document.querySelector("#paginator");
   const $firstPage = document.querySelector("#button-first-page");
 
@@ -110,7 +110,7 @@ function firstPage(callBackFunction = () => {}) {
   };
 }
 
-function lastPage(callBackFunction = () => {}) {
+function lastPage(callBackFunction) {
   const $paginator = document.querySelector("#paginator");
   const $lastPage = document.querySelector("#button-last-page");
   const maxPages = Number($paginator.dataset.maxPages);
@@ -124,7 +124,7 @@ function lastPage(callBackFunction = () => {}) {
   };
 }
 
-function previousPage(callBackFunction = () => {}) {
+function previousPage(callBackFunction) {
   const $buttonPrevious = document.querySelector("#button-previous");
   const $paginator = document.querySelector("#paginator");
   const $pageButtons = document.querySelectorAll(".page-button");
@@ -140,7 +140,7 @@ function previousPage(callBackFunction = () => {}) {
   };
 }
 
-function updatePageOnClick(callBackFunction = () => {}) {
+function updatePageOnClick(callBackFunction) {
   const pokemonPerPage = 15;
   const $pageButtons = document.querySelectorAll(".page-button");
   const $paginator = document.querySelector("#paginator");
@@ -182,7 +182,7 @@ function generateNextPageButtons(currentPage) {
   }
 }
 
-export function updateNextPage(callBackFunction = () => {}) {
+export function updateNextPage(callBackFunction) {
   const pokemonPerPage = 15;
   const $paginator = document.querySelector("#paginator");
   const currentPage = document.querySelector(".current-page");
@@ -196,7 +196,7 @@ export function updateNextPage(callBackFunction = () => {}) {
   buttonHandle();
 }
 
-function nextPage(callBackFunction = () => {}) {
+function nextPage(callBackFunction) {
   const $buttonNext = document.querySelector("#button-next");
 
   $buttonNext.onclick = () => {
@@ -204,7 +204,7 @@ function nextPage(callBackFunction = () => {}) {
   };
 }
 
-export function handlePages(callBackFunction = () => {}) {
+export function handlePages(callBackFunction) {
   buttonHandle();
   firstPage(callBackFunction);
   lastPage(callBackFunction);
@@ -213,10 +213,7 @@ export function handlePages(callBackFunction = () => {}) {
   updatePageOnClick(callBackFunction);
 }
 
-function getPreviousPokemon(
-  updatePokemon = () => {},
-  updatePokemonList = () => {}
-) {
+function getPreviousPokemon(updatePokemon, updatePokemonList) {
   const $buttonPreviousPokemon = document.querySelector("#previous-pokemon");
   $buttonPreviousPokemon.onclick = async () => {
     const $currentPokemonList = document.querySelectorAll(
@@ -253,10 +250,7 @@ function getPreviousPokemon(
   };
 }
 
-async function getNextPokemon(
-  updatePokemon = () => {},
-  updatePokemonList = () => {}
-) {
+async function getNextPokemon(updatePokemon, updatePokemonList) {
   const $buttonNextPokemon = document.querySelector("#next-pokemon");
   $buttonNextPokemon.onclick = () => {
     const $currentPokemonList = document.querySelectorAll(

@@ -3,12 +3,13 @@
  */
 /// <reference types= '@types/jest' />
 import page from "../fixtures/pagination-fixture.js";
-import { handlePages } from "../page-buttons.js";
+import { handlePages, handlePokemonCycle } from "../page-buttons.js";
 
 beforeEach(() => {
   document.body.innerHTML = page;
   const mockCallback = jest.fn();
   handlePages(mockCallback);
+  handlePokemonCycle(mockCallback, mockCallback);
 });
 
 test("Callback function in handlePages should be called", () => {
@@ -123,7 +124,7 @@ test("Previous button should redirect to the previous page if current page is no
   expect($pageButtons[0].classList).toContain("current-page");
 });
 
-test.skip("Previous pokemon button should not call updatePokemon if current pokemon is first in the paginator", () => {
+test("Previous pokemon button should not call updatePokemon if current pokemon is first in the paginator", () => {
   const updatePokemonMock = jest.fn();
   const updatePokemonListMock = jest.fn();
   handlePokemonCycle(updatePokemonMock, updatePokemonListMock);
@@ -136,7 +137,7 @@ test.skip("Previous pokemon button should not call updatePokemon if current poke
   expect(updatePokemonMock).toHaveBeenCalledTimes(0);
 });
 
-test.skip("Previous pokemon button should call updatePokemon", () => {
+test("Previous pokemon button should call updatePokemon", () => {
   const updatePokemonMock = jest.fn();
   const updatePokemonListMock = jest.fn();
   handlePokemonCycle(updatePokemonMock, updatePokemonListMock);
@@ -161,7 +162,7 @@ test.skip("Previous pokemon button should go back one page if current pokemon is
   expect($currentPokemonList[0]).toBe("");
 });
 
-test.skip("Next pokemon button should call updatePokemon", () => {
+test("Next pokemon button should call updatePokemon", () => {
   const updatePokemonMock = jest.fn();
   const updatePokemonListMock = jest.fn();
   handlePokemonCycle(updatePokemonMock, updatePokemonListMock);

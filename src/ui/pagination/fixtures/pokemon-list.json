@@ -1,80 +1,80 @@
 {
   "count": 1281,
   "pokemon": [
-      {
-          "displayName": "Bulbasaur",
-          "url": "https://pokeapi.co/api/v2/pokemon/1/",
-          "name": "bulbasaur"
-      },
-      {
-          "displayName": "Ivysaur",
-          "url": "https://pokeapi.co/api/v2/pokemon/2/",
-          "name": "ivysaur"
-      },
-      {
-          "displayName": "Venusaur",
-          "url": "https://pokeapi.co/api/v2/pokemon/3/",
-          "name": "venusaur"
-      },
-      {
-          "displayName": "Charmander",
-          "url": "https://pokeapi.co/api/v2/pokemon/4/",
-          "name": "charmander"
-      },
-      {
-          "displayName": "Charmeleon",
-          "url": "https://pokeapi.co/api/v2/pokemon/5/",
-          "name": "charmeleon"
-      },
-      {
-          "displayName": "Charizard",
-          "url": "https://pokeapi.co/api/v2/pokemon/6/",
-          "name": "charizard"
-      },
-      {
-          "displayName": "Squirtle",
-          "url": "https://pokeapi.co/api/v2/pokemon/7/",
-          "name": "squirtle"
-      },
-      {
-          "displayName": "Wartortle",
-          "url": "https://pokeapi.co/api/v2/pokemon/8/",
-          "name": "wartortle"
-      },
-      {
-          "displayName": "Blastoise",
-          "url": "https://pokeapi.co/api/v2/pokemon/9/",
-          "name": "blastoise"
-      },
-      {
-          "displayName": "Caterpie",
-          "url": "https://pokeapi.co/api/v2/pokemon/10/",
-          "name": "caterpie"
-      },
-      {
-          "displayName": "Metapod",
-          "url": "https://pokeapi.co/api/v2/pokemon/11/",
-          "name": "metapod"
-      },
-      {
-          "displayName": "Butterfree",
-          "url": "https://pokeapi.co/api/v2/pokemon/12/",
-          "name": "butterfree"
-      },
-      {
-          "displayName": "Weedle",
-          "url": "https://pokeapi.co/api/v2/pokemon/13/",
-          "name": "weedle"
-      },
-      {
-          "displayName": "Kakuna",
-          "url": "https://pokeapi.co/api/v2/pokemon/14/",
-          "name": "kakuna"
-      },
-      {
-          "displayName": "Beedrill",
-          "url": "https://pokeapi.co/api/v2/pokemon/15/",
-          "name": "beedrill"
-      }
+    {
+      "displayName": "Bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "name": "bulbasaur"
+    },
+    {
+      "displayName": "Ivysaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/2/",
+      "name": "ivysaur"
+    },
+    {
+      "displayName": "Venusaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/3/",
+      "name": "venusaur"
+    },
+    {
+      "displayName": "Charmander",
+      "url": "https://pokeapi.co/api/v2/pokemon/4/",
+      "name": "charmander"
+    },
+    {
+      "displayName": "Charmeleon",
+      "url": "https://pokeapi.co/api/v2/pokemon/5/",
+      "name": "charmeleon"
+    },
+    {
+      "displayName": "Charizard",
+      "url": "https://pokeapi.co/api/v2/pokemon/6/",
+      "name": "charizard"
+    },
+    {
+      "displayName": "Squirtle",
+      "url": "https://pokeapi.co/api/v2/pokemon/7/",
+      "name": "squirtle"
+    },
+    {
+      "displayName": "Wartortle",
+      "url": "https://pokeapi.co/api/v2/pokemon/8/",
+      "name": "wartortle"
+    },
+    {
+      "displayName": "Blastoise",
+      "url": "https://pokeapi.co/api/v2/pokemon/9/",
+      "name": "blastoise"
+    },
+    {
+      "displayName": "Caterpie",
+      "url": "https://pokeapi.co/api/v2/pokemon/10/",
+      "name": "caterpie"
+    },
+    {
+      "displayName": "Metapod",
+      "url": "https://pokeapi.co/api/v2/pokemon/11/",
+      "name": "metapod"
+    },
+    {
+      "displayName": "Butterfree",
+      "url": "https://pokeapi.co/api/v2/pokemon/12/",
+      "name": "butterfree"
+    },
+    {
+      "displayName": "Weedle",
+      "url": "https://pokeapi.co/api/v2/pokemon/13/",
+      "name": "weedle"
+    },
+    {
+      "displayName": "Kakuna",
+      "url": "https://pokeapi.co/api/v2/pokemon/14/",
+      "name": "kakuna"
+    },
+    {
+      "displayName": "Beedrill",
+      "url": "https://pokeapi.co/api/v2/pokemon/15/",
+      "name": "beedrill"
+    }
   ]
 }

@@ -32,6 +32,6 @@ test("RenderPokemonSprite() should show question mark image if sprite is non ava
   createPokemonPage(pokemonData);
   const $questionMark = document.querySelector("#question-mark");
   const $pokemonSprite = document.querySelector("#pokemon-sprite");
-  expect($pokemonSprite.classList).toContain('d-none');
-  expect($questionMark.classList).not.toContain('d-none');
+  expect($pokemonSprite.classList).toContain("d-none");
+  expect($questionMark.classList).not.toContain("d-none");
 });

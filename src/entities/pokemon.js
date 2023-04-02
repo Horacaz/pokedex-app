@@ -8,7 +8,7 @@ export default class Pokemon {
     height,
     weight,
     types,
-    stats
+    stats,
   }) {
     this.name = name;
     this.id = id;
@@ -21,4 +21,3 @@ export default class Pokemon {
     this.displayName = displayName;
   }
 }
-
