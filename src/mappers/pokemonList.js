@@ -9,5 +9,5 @@ export default function mapPokemonList(apiData) {
     name: pokemon.name,
   }));
   const pokemonList = { count, pokemon };
-  return new PokemonList(pokemonList);
+  return new PokemonList(pokemonList.count, pokemonList.pokemon);
 }
