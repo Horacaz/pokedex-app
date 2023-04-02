@@ -1,5 +1,5 @@
 import { getPokemonFromApi, getPokemonListFromApi } from "../api/pokedex.js";
-import mapPokemon from '../mappers/pokemon.js'
+import mapPokemon from "../mappers/pokemon.js";
 import mapPokemonList from "../mappers/pokemonList.js";
 import {
   retrievePokemonFromLocalStorage,
