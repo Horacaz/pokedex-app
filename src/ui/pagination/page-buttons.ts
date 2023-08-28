@@ -1,4 +1,7 @@
-type updatePokemonListCB = (currentOffset: string) => Promise<void>;
+type updatePokemonListCB = (
+  offSet: string,
+  newCurrentPokemon?: number
+) => Promise<void>;
 
 function buttonHandle() {
   const $pageButtons = document.querySelectorAll(".page-button");

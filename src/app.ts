@@ -24,12 +24,13 @@ async function updatePokemonPage(pokemon: string) {
   createPokemonPage(pokemonData);
 }
 
-async function updatePokemonList(offSet: string, newCurrentPokemon?: number) {
+async function updatePokemonList(
+  offSet: string,
+  newCurrentPokemon: number = 0
+) {
   const pokemonList = await pokemonInstance.getPokemonList(offSet);
   printPokemonList(pokemonList);
-  if (newCurrentPokemon) {
-    setCurrentPokemon(updatePokemonPage, newCurrentPokemon);
-  }
+  setCurrentPokemon(updatePokemonPage, newCurrentPokemon);
 }
 
 async function handlePokemonSearch(pokemonSearch: string) {
@@ -49,7 +50,7 @@ export default async function initApp() {
   printPokemonList(
     await pokemonInstance.getPokemonList(initialPokemonListOffset)
   );
+  handleApp();
   updatePokemonPage("bulbasaur");
   setCurrentPokemon(updatePokemonPage, 0);
-  handleApp();
 }

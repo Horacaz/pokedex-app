@@ -10,6 +10,7 @@
     "cypress": "^9.6.1",
     "eslint": "^8.15.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.5.3",
@@ -35,7 +36,8 @@
     "start": "http-server -c-1 dist/",
     "test": "jest src/",
     "prepare": "husky install",
-    "style": "prettier src --write"
+    "style": "prettier src --write",
+    "cypress": "cypress run"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

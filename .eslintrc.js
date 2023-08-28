@@ -4,11 +4,7 @@ module.exports = {
     es2021: true,
     "jest/globals": true,
   },
-  extends: [
-    "airbnb-base",
-    "plugin:cypress/recommended",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["airbnb-base", "prettier"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
